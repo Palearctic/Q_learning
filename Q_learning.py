@@ -1,4 +1,4 @@
-#coding utf-8
+#coding:utf-8
 from numpy.random import *
 import numpy as np
 
@@ -53,7 +53,7 @@ def main():
     reward_list=reward()
     print_q(q_value) #Q値の初期値
     for i in range(ROTATION):
-        s=0
+        s=0 #状態
         for i in range(3):
             s=which_way(s,q_value)
             q_value[s]=update_q(s,q_value,reward_list)
