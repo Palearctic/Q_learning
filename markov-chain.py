@@ -1,23 +1,23 @@
 import numpy as np
 from matplotlib import pyplot
 
-TRANSITION=np.array([[0.3,0.3,0.4],[0.1,0.5,0.4],[0.2,0.6,0.2]]) #遷移行列
+TRANSITION_ARRAY=np.array([[0.3,0.3,0.4],[0.1,0.5,0.4],[0.2,0.6,0.2]]) #遷移行列
 INIT=np.array([0.6,0.25,0.15]) #初期状態分布
 ROOP=15 #遷移回数
-n=np.arange(ROOP)
+N=np.arange(ROOP)
 RED=np.zeros(ROOP)
 BLUE=np.zeros(ROOP)
 WHITE=np.zeros(ROOP)
 
  #状態分布の更新
  def renew_p(state):
-    return np.dot(state,TRANSITION)
+    return np.dot(state,TRANSITION_ARRAY)
 
 #プロット
 def plot():
-    pyplot.plot(n,RED,label='red')
-    pyplot.plot(n,BLUE,label='blue')
-    pyplot.plot(n,WHITE,label='white')
+    pyplot.plot(N,RED,label='red')
+    pyplot.plot(N,BLUE,label='blue')
+    pyplot.plot(N,WHITE,label='white')
 
     pyplot.title('p_transition')
     pyplot.xlabel('n')
